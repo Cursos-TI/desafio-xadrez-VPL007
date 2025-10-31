@@ -3,6 +3,7 @@
 int main () {
 
     int i = 1;
+    int mov_cavalo, mov_bispo, mov_torre, mov_rainha;
 
     printf("\n");
 
@@ -13,7 +14,7 @@ int main () {
     printf("Torre anda 5 casas pra frente:\n");
     for (i = 1; i <= 5; i++)
     {
-        printf("Uma casa para frente\n");
+        printf("Cima\n");
     }
     //-----------------------------------------------------------------
     
@@ -27,9 +28,9 @@ int main () {
     do {
       
         if(i % 2 == 0) {
-        printf("Uma casa pra direita!\n");
+        printf("Direita!\n");
         } else {
-        printf("Uma casa para cima\n");
+        printf("Cima\n");
         }
 
         i++;
@@ -44,10 +45,30 @@ int main () {
     //----------------------Jogada 3----------------------------------- 
     i = 1;
 
-    printf("Rainha anda 8 casas para frente:\n");
+    printf("Rainha anda 8 casas para esquerda:\n");
     while (i <= 8)
     {
-        printf("Uma casa para a esquerda\n", i);
+        printf("Esquerda\n", i);
+        i++;
+    }
+    
+    //-----------------------------------------------------------------
+
+    printf("\n");
+    printf("Jogador adverdário faz a sua jogada...\n");
+    printf("\n");
+
+    //----------------------Jogada 4----------------------------------- 
+    i = 1;
+
+    printf("Cavalo anda 2 casas pra baixo e 1 pra direita (em L):\n");
+    while (i <= 1)
+    {
+        for(int j = 0; j < 2; j++)
+        {
+            printf("Baixo\n");
+        }
+        printf("Direita\n");
         i++;
     }
     
