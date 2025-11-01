@@ -1,81 +1,90 @@
 #include <stdio.h>
 
+//--Recursividade para o movimento da Torre
+void moverTorre (int casas) {
+    if (casas > 0) {
+        printf("Frente\n");
+        moverTorre(casas - 1);
+    }
+}
+
+//--Recursividade para o movimento do Bispo
+void  moverBispo (int casas) {
+    if (casas > 0) {
+        for(int i = 0; i < 1; i++){
+            printf("Cima\n");
+            printf("Direita\n");
+        }
+        moverBispo(casas - 1);
+    }
+}
+
+//--Recursividade para o movimento Raina
+void moverRainha (int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+//--Recursividade para o movimento do Cavalo
+void moverCavalo () {
+    for (int i = 0; i < 2; i++) {
+        printf("Cima\n");
+    }
+    printf("Direita\n");
+}
+
+//-------------------------Início do Jogo--------------------------------
 int main () {
 
-    int i = 1;
-    int mov_cavalo, mov_bispo, mov_torre, mov_rainha;
-
     printf("\n");
 
-    printf("=== Vamos continuar o jogo de xadrez de onde paramos... ====\n");
+    printf("=== Vamos continuar o jogo de xadrez de onde paramos...Eu começo... ====\n");
     printf("\n");
 
-    //----------------------Jogada 1-----------------------------------
+    //----------------------Jogada 1
+
     printf("Torre anda 5 casas pra frente:\n");
-    for (i = 1; i <= 5; i++)
-    {
-        printf("Cima\n");
-    }
-    //-----------------------------------------------------------------
+    moverTorre(5);
+
+    //------------------Jogada Adversário
     
     printf("\n");
-    printf("Jogador adverdário faz a sua jogada...\n");
+    printf("Agora é vez do jogador adverdário, que faz a sua jogada. Minha vez de novo...\n");
     printf("\n");
 
-    //----------------------Jogada 2-----------------------------------   
+    //----------------------Jogada 2   
+
     printf("Bispo anda 5 casas na diagonal para a direita:\n");
-    i = 1;
-    do {
-      
-        if(i % 2 == 0) {
-        printf("Direita!\n");
-        } else {
-        printf("Cima\n");
-        }
+    moverBispo(5);
 
-        i++;
-    } while (i <= 10);
-
-    //-----------------------------------------------------------------
-
+    //------------------Jogada Adversário
+    
     printf("\n");
-    printf("Jogador adverdário faz a sua jogada...\n");
-    printf("\n");
-
-    //----------------------Jogada 3----------------------------------- 
-    i = 1;
-
+    printf("Agora é vez do jogador adverdário, que faz a sua jogada. Minha vez de novo...\n");
+    printf("\n");  
+    
+    //----------------------Jogada 3
+    
     printf("Rainha anda 8 casas para esquerda:\n");
-    while (i <= 8)
-    {
-        printf("Esquerda\n", i);
-        i++;
-    }
+    moverRainha(8);
     
-    //-----------------------------------------------------------------
+    //------------------Jogada Adversário
 
     printf("\n");
-    printf("Jogador adverdário faz a sua jogada...\n");
+    printf("Agora é vez do jogador adverdário, que faz a sua jogada. Minha vez de novo...\n");
     printf("\n");
 
-    //----------------------Jogada 4----------------------------------- 
-    i = 1;
-
-    printf("Cavalo anda 2 casas pra baixo e 1 pra direita (em L):\n");
-    while (i <= 1)
-    {
-        for(int j = 0; j < 2; j++)
-        {
-            printf("Baixo\n");
-        }
-        printf("Direita\n");
-        i++;
-    }
+    //----------------------Jogada 4
     
-    //-----------------------------------------------------------------
+    printf("Cavalo anda 2 casas pra cima e 1 pra direita (em L):\n");
+    moverCavalo();
+    
+    //------------------Jogada Adversário
     
     printf("\n");
-    printf("Jogador adverdário faz a sua jogada, e é cheque mate...\n");
+    printf("Agora é vez do jogador adverdário, que faz a sua jogada, e é cheque mate. Perdi...\n");
     printf("\n");
 
     return 0;
